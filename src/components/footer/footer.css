@@ -1,0 +1,49 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  color: #000;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.footer a:hover {
+  opacity: 0.5;
+  transition-duration: 0.3s;
+}
+
+.footer-email {
+  margin: 40px 0;
+}
+
+.footer-email a {
+  font-size: 17px;
+}
+
+.footer-address {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.footer-phone {
+  margin: 10px 0;
+}
+
+.footer-icons {
+  margin: 40px 0;
+}
+
+.footer-icons img {
+  padding: 0px 8px;
+  cursor: pointer;
+}
+
+.footer-icons img:hover {
+  opacity: 0.5;
+  transition-duration: 0.3s;
+}

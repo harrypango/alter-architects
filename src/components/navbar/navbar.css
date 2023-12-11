@@ -1,0 +1,27 @@
+@import url("https://fonts.cdnfonts.com/css/raleway-5");
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.header h1 {
+  color: black;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  font-size: 30px;
+  margin: 0;
+}
+
+.header-links a {
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 60px;
+  text-decoration: none;
+}
+
+.header-links a:nth-child(1) {
+  margin-left: 0;
+}
