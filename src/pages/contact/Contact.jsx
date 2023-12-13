@@ -4,18 +4,18 @@ import "./contact.css";
 const Contact = () => {
   return (
     <div className="container section__margin">
-      <div className="container-details">
-        <div className="container-details__heading">
-          <h1>CONTACT</h1>
+      <div className="container-left">
+        <h1>CONTACT</h1>
+        <div className="container-left__details">
+          <h4>Alter Architects</h4>
+          <p>Tirana, Albania</p>
+          <p>
+            Rruga “Skënderbej” pallati 8 kati përdhe,
+            <br /> Rr. Kavajës <br />
+            1001, Tirana
+          </p>
+          <p>email: info@alter-architects.com</p>
         </div>
-        <h4>Alter Architects</h4>
-        <p>Tirana, Albania</p>
-        <p>
-          Rruga “Skënderbej” pallati 8 kati përdhe,
-          <br /> Rr. Kavajës <br />
-          1001, Tirana
-        </p>
-        <p>email: info@alter-architects.com</p>
       </div>
       <div className="container-form">
         <div className="container-form__name">
@@ -25,6 +25,7 @@ const Contact = () => {
         <input type="text" placeholder="E-mail" />
 
         <textarea type="text" placeholder="Message" />
+        <button>SUBMIT</button>
       </div>
     </div>
   );
