@@ -1,1 +1,46 @@
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  grid-gap: 2rem;
+  margin: 8rem 4rem 6rem;
+}
 
+.projects-more {
+  display: flex;
+  justify-content: center;
+}
+
+.projects-more button {
+  color: #363636;
+  background-color: transparent;
+  border: 1px solid #363636;
+  border-radius: 25px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 15px 43px;
+  line-height: 2em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.projects-more button:hover {
+  border-color: #363636;
+  background-color: #363636;
+  color: #fff;
+  transition-duration: 0.3s;
+}
+
+@media screen and (max-width: 800px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 2fr);
+    margin: 2rem 4rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .projects-container {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 3rem 2rem;
+  }
+}

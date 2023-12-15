@@ -1,0 +1,20 @@
+.project h1 {
+  color: #1b1b1b;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.67em;
+  letter-spacing: 0.05em;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.project img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.project img:hover {
+  opacity: 0.95;
+  transition-duration: 0.5s;
+}

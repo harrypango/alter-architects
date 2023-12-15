@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 3rem 4rem;
 }
 
 .footer a {
@@ -46,4 +47,10 @@
 .footer-icons img:hover {
   opacity: 0.5;
   transition-duration: 0.3s;
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    margin: 3rem 2rem;
+  }
 }

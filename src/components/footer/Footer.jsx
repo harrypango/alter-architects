@@ -6,7 +6,7 @@ import behance from "../../assets/behance.svg";
 
 const Footer = () => {
   return (
-    <div className="footer section__margin">
+    <div className="footer">
       <div className="footer-email">
         <a href="mailto:info@alter-architects.com">info@alter-architects.com</a>
       </div>

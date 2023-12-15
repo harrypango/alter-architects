@@ -3,11 +3,12 @@ import "./contact.css";
 
 const Contact = () => {
   return (
-    <div className="container section__margin">
-      <div className="container-left">
-        <h1>CONTACT</h1>
-        <div className="container-left__details">
-          <h4>Alter Architects</h4>
+    <div className="container">
+      <h1>CONTACT</h1>
+
+      <div className="container-bottom">
+        <div className="container-left">
+          <span className="container-left__heading">Alter Architects</span>
           <p>Tirana, Albania</p>
           <p>
             Rruga “Skënderbej” pallati 8 kati përdhe,
@@ -16,16 +17,17 @@ const Contact = () => {
           </p>
           <p>email: info@alter-architects.com</p>
         </div>
-      </div>
-      <div className="container-form">
-        <div className="container-form__name">
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
-        </div>
-        <input type="text" placeholder="E-mail" />
 
-        <textarea type="text" placeholder="Message" />
-        <button>SUBMIT</button>
+        <div className="container-form">
+          <div className="container-form__name">
+            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="Last Name" />
+          </div>
+
+          <input type="text" placeholder="E-mail" />
+          <textarea type="text" placeholder="Message" />
+          <button>SUBMIT</button>
+        </div>
       </div>
     </div>
   );
