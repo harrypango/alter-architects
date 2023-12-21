@@ -1,14 +1,15 @@
 import { React, useState } from "react";
-import "./projects.css";
+import "./home.css";
 import Project from "../../components/project/Project";
-import { projects } from "../../pages/projects/allProjects";
+import { thumbnails } from "./thumbnails";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 const Projects = () => {
   const [load, setLoad] = useState(false);
   const [projectsToShow, setProjectsToShow] = useState(6);
 
   const renderAdditionalProjects = () => {
-    return projects
+    return thumbnails
       .slice(projectsToShow, setProjectsToShow)
       .map((project, index) => (
         <Project key={index} title={project.title} src={project.src}></Project>
@@ -18,16 +19,21 @@ const Projects = () => {
   return (
     <>
       <div className="projects-container">
-        {projects.slice(0, projectsToShow).map((project, index) => (
-          <Project
-            key={index}
-            title={project.title}
-            src={project.src}
-          ></Project>
+        {thumbnails.slice(0, projectsToShow).map((project, index) => (
+          <Link
+            to={`gallery/project-${project.id}`}
+            style={{ textDecoration: "none" }}
+          >
+            <Project
+              key={index}
+              title={project.title}
+              src={project.src}
+            ></Project>
+          </Link>
         ))}
       </div>
       {load && <>{renderAdditionalProjects()}</>}
-      {projectsToShow < projects.length && (
+      {projectsToShow < thumbnails.length && (
         <div className="projects-more">
           <button
             onClick={() => {
