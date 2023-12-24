@@ -1,7 +1,7 @@
 import React from "react";
-import "./project.css";
+import "./thumbnail.css";
 
-const Project = ({ title, src }) => {
+const Thumbnail = ({ title, src }) => {
   return (
     <>
       <div className="project">
@@ -12,4 +12,4 @@ const Project = ({ title, src }) => {
   );
 };
 
-export default Project;
+export default Thumbnail;

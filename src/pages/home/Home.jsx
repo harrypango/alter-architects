@@ -1,44 +1,45 @@
 import { React, useState } from "react";
 import "./home.css";
-import Project from "../../components/project/Project";
-import { thumbnails } from "./thumbnails";
+import Thumbnail from "../../components/thumbnail/Thumbnail";
+import { thumbnails } from "../../components/thumbnail/thumbnails";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
-const Projects = () => {
+const Thumbnails = () => {
   const [load, setLoad] = useState(false);
-  const [projectsToShow, setProjectsToShow] = useState(6);
+  const [thumbnailsToShow, setThumbnailsToShow] = useState(6);
 
-  const renderAdditionalProjects = () => {
+  const renderAdditionalThumbnails = () => {
     return thumbnails
-      .slice(projectsToShow, setProjectsToShow)
+      .slice(thumbnailsToShow, setThumbnailsToShow)
       .map((project, index) => (
-        <Project key={index} title={project.title} src={project.src}></Project>
+        <Thumbnail
+          key={index}
+          title={project.title}
+          src={project.src}
+        ></Thumbnail>
       ));
   };
 
   return (
     <>
-      <div className="projects-container">
-        {thumbnails.slice(0, projectsToShow).map((project, index) => (
-          <Link
-            to={`gallery/project-${project.id}`}
-            style={{ textDecoration: "none" }}
-          >
-            <Project
+      <div className="thumbnails-container">
+        {thumbnails.slice(0, thumbnailsToShow).map((project, index) => (
+          <Link to={`project/${project.id}`} style={{ textDecoration: "none" }}>
+            <Thumbnail
               key={index}
               title={project.title}
               src={project.src}
-            ></Project>
+            ></Thumbnail>
           </Link>
         ))}
       </div>
-      {load && <>{renderAdditionalProjects()}</>}
-      {projectsToShow < thumbnails.length && (
-        <div className="projects-more">
+      {load && <>{renderAdditionalThumbnails()}</>}
+      {thumbnailsToShow < thumbnails.length && (
+        <div className="thumbnails-more">
           <button
             onClick={() => {
               setLoad(true);
-              setProjectsToShow(projectsToShow + 3);
+              setThumbnailsToShow(thumbnailsToShow + 3);
             }}
           >
             Load More
@@ -49,4 +50,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Thumbnails;

@@ -1,16 +1,16 @@
-.projects-container {
+.thumbnails-container {
   display: grid;
   grid-template-columns: repeat(3, 2fr);
   grid-gap: 2rem;
   margin: 8rem 4rem 6rem;
 }
 
-.projects-more {
+.thumbnails-more {
   display: flex;
   justify-content: center;
 }
 
-.projects-more button {
+.thumbnails-more button {
   color: #363636;
   background-color: transparent;
   border: 1px solid #363636;
@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-.projects-more button:hover {
+.thumbnails-more button:hover {
   border-color: #363636;
   background-color: #363636;
   color: #fff;
@@ -32,14 +32,14 @@
 }
 
 @media screen and (max-width: 800px) {
-  .projects-container {
+  .thumbnails-container {
     grid-template-columns: repeat(2, 2fr);
     margin: 2rem 4rem;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .projects-container {
+  .thumbnails-container {
     grid-template-columns: repeat(1, 1fr);
     margin: 3rem 2rem;
   }
