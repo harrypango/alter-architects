@@ -4,11 +4,38 @@ import menuLogo from "../../assets/menuLogo.svg";
 import "./navbar.css";
 
 const Menu = () => {
+  const [activeLinks, setActiveLinks] = useState([true, false, false]);
+
+  function activate(index) {
+    const newActiveLinks = activeLinks.map((link, i) =>
+      i === index ? true : false
+    );
+    setActiveLinks(newActiveLinks);
+  }
+
   return (
     <>
-      <Link to="/">Projects</Link>
-      <Link to="/contact">Contact</Link>
-      <Link to="/about">About Us</Link>
+      <Link
+        to="/"
+        onClick={() => activate(0)}
+        style={{ textDecoration: activeLinks[0] ? "underline" : "none" }}
+      >
+        Projects
+      </Link>
+      <Link
+        to="/contact"
+        onClick={() => activate(1)}
+        style={{ textDecoration: activeLinks[1] ? "underline" : "none" }}
+      >
+        Contact
+      </Link>
+      <Link
+        to="/about"
+        onClick={() => activate(2)}
+        style={{ textDecoration: activeLinks[2] ? "underline" : "none" }}
+      >
+        About Us
+      </Link>
     </>
   );
 };

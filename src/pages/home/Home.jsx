@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 
 const Thumbnails = () => {
   const [load, setLoad] = useState(false);
+
   const [thumbnailsToShow, setThumbnailsToShow] = useState(6);
 
   const renderAdditionalThumbnails = () => {
@@ -24,7 +25,11 @@ const Thumbnails = () => {
     <>
       <div className="thumbnails-container">
         {thumbnails.slice(0, thumbnailsToShow).map((project, index) => (
-          <Link to={`project/${project.id}`} style={{ textDecoration: "none" }}>
+          <Link
+            to={`project/${project.id}`}
+            style={{ textDecoration: "none" }}
+            key={index}
+          >
             <Thumbnail
               key={index}
               title={project.title}

@@ -8,12 +8,27 @@ import {
   Routes,
   useParams,
 } from "react-router-dom";
+import LazyLoad from "react-lazy-load";
 import leftArrow from "../../assets/left-arrow.svg";
 import rightArrow from "../../assets/right-arrow.svg";
 
 const Project = () => {
   const { id } = useParams();
+
   const project = getProject(id);
+  const projects = getProjects();
+
+  const currentIndex = projects.findIndex((p) => p.id === id);
+
+  const previousProject = projects[currentIndex - 1];
+  const nextProject = projects[currentIndex + 1];
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="project-container">
@@ -29,32 +44,38 @@ const Project = () => {
       </div>
       <div className="project-container_horizontal">
         {project.images.slice(1).map((image, i) => {
-          return <img alt="interior-image" src={image} key={i} />;
+          <LazyLoad offsetTop={100}>
+            <img alt="interior-image" src={image} key={i} />
+          </LazyLoad>;
         })}
       </div>
       <div className="project-container_vertical">
         {project.verticalImages.map((image, i) => {
-          return <img alt="interior-image" src={image} key={i} />;
+          <LazyLoad offsetTop={100}>
+            <img alt="interior-image" src={image} key={i} />;
+          </LazyLoad>;
         })}
       </div>
       <div className="project-previous-next">
         <div className="previous">
-          <img src={leftArrow} />
+          {previousProject ? <img src={leftArrow} /> : ""}
           <Link
             to={`/project/${Number(project.id) - 1}`}
             style={{ textDecoration: "none" }}
+            onClick={scrollToTop}
           >
-            <p>{project.title}</p>
+            <p>{previousProject?.title}</p>
           </Link>
         </div>
         <div className="next">
           <Link
             to={`/project/${Number(project.id) + 1}`}
             style={{ textDecoration: "none" }}
+            onClick={scrollToTop}
           >
-            <p>{project.title}</p>
+            <p>{nextProject?.title}</p>
           </Link>
-          <img src={rightArrow} />
+          {nextProject ? <img src={rightArrow} /> : ""}
         </div>
       </div>
     </div>
