@@ -14,6 +14,7 @@ const Footer = () => {
         <a
           href="https://www.google.com/maps/place/Alter+Architects/@41.3286866,19.8085539,15.25z/data=!4m5!3m4!1s0x0:0x69d2846d247371ca!8m2!3d41.3286687!4d19.808588"
           target="_blank"
+          rel="noreferrer"
         >
           Rruga Skënderbeg, Tirana
           <br />
@@ -21,18 +22,29 @@ const Footer = () => {
         </a>
       </div>
       <div className="footer-phone">
-        <a href="tel:+355693530506">+355 69 35 30 506</a> |
-        <a href="tel:+355698120140"> +355 69 81 20 140</a>
+        <a href="tel:+355693530506">+355 69 35 30 506</a>
       </div>
       <div className="footer-icons">
-        <a href="https://www.instagram.com/alter_architects/" target="_blank">
-          <img src={instagram} />
+        <a
+          href="https://www.instagram.com/alter_architects/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={instagram} alt={`instagram`} width="42" height="26" />
         </a>
-        <a href="https://www.facebook.com/alterarchitects16/" target="_blank">
-          <img src={facebook} />
+        <a
+          href="https://www.facebook.com/alterarchitects16/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={facebook} alt={`facebook`} width="42" height="26" />
         </a>
-        <a href="https://www.behance.net/alterarchitects" target="_blank">
-          <img src={behance} />
+        <a
+          href="https://www.behance.net/alterarchitects"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={behance} alt={`behance`} width="42" height="26" />
         </a>
       </div>
     </div>

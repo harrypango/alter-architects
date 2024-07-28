@@ -34,6 +34,8 @@ const Thumbnails = () => {
               key={index}
               title={project.title}
               src={project.src}
+              width={project.width}
+              height={project.height}
             ></Thumbnail>
           </Link>
         ))}

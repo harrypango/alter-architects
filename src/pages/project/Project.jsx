@@ -8,7 +8,6 @@ import {
   Routes,
   useParams,
 } from "react-router-dom";
-import LazyLoad from "react-lazy-load";
 import leftArrow from "../../assets/left-arrow.svg";
 import rightArrow from "../../assets/right-arrow.svg";
 
@@ -44,16 +43,12 @@ const Project = () => {
       </div>
       <div className="project-container_horizontal">
         {project.images.slice(1).map((image, i) => {
-          <LazyLoad offsetTop={100}>
-            <img alt="interior-image" src={image} key={i} />
-          </LazyLoad>;
+          <img alt="interior-image" src={image} key={i} />;
         })}
       </div>
       <div className="project-container_vertical">
         {project.verticalImages.map((image, i) => {
-          <LazyLoad offsetTop={100}>
-            <img alt="interior-image" src={image} key={i} />;
-          </LazyLoad>;
+          <img alt="interior-image" src={image} key={i} />;
         })}
       </div>
       <div className="project-previous-next">
